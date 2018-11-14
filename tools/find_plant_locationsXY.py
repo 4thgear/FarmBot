@@ -11,12 +11,12 @@ def notInList(newObject):
             return False
     return True
 
-num = list(range(15))
+num = list(range(4))
 for i in range(len(num)):
     imgloc = r"pics/templates/main/foamSheet0.jpg"
     img_rgb = cv2.imread(imgloc)
     img_gray = cv2.cvtColor(img_rgb, cv2.COLOR_BGR2GRAY)
-    imgloc2 = r"pics/templates/main/hole"+str(num[i])+".jpg"
+    imgloc2 = r"pics/templates/main/holeWide"+str(num[i])+".jpg"
     template = cv2.imread(imgloc2,0)
     w, h = template.shape[::-1]
     res = cv2.matchTemplate(img_gray,template,cv2.TM_CCOEFF_NORMED)
